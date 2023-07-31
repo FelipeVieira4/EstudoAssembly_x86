@@ -1,8 +1,8 @@
 %include 'commands.asm' ;Incluir o arquivo commands
 
 section .data:
-    x dw 0xF
-    y dw 0xF
+    x db 0xF
+    y db 0xF
 
     msgX db "X e maior que Y", LF, NULL
     msgY db "Y e maior que X", LF, NULL
@@ -19,9 +19,9 @@ section .text:
 _start:
 
    ; Compara os valores de x e y
-    mov ax, [x]
-    mov bx, [y]
-    cmp ax, bx
+    mov al, [x]
+    mov ah, [y]
+    cmp al, ah
     jg maior
     jl menor
 
