@@ -1,8 +1,8 @@
 %include 'commands.asm' ;Incluir o arquivo commands
 
 section .data:
-    x db 0xF
-    y db 0xF
+    x db 0xFF   ;1 byte ou 8 bits
+    y dw 0xFA    ;2 byte ou 16 bits
 
     msgX db "X e maior que Y", LF, NULL
     msgY db "Y e maior que X", LF, NULL
@@ -19,9 +19,9 @@ section .text:
 _start:
 
    ; Compara os valores de x e y
-    mov al, [x]
-    mov ah, [y]
-    cmp al, ah
+    mov bx, word[y]
+    movzx ax, byte[x] ;Colocar variavel x de 1 byte em registrado ax de 2 byte
+    cmp ax,bx
     jg maior
     jl menor
 
