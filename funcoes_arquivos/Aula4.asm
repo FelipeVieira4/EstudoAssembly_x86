@@ -18,6 +18,8 @@ section .text:
 
 _start:
 
+    call printHW
+
    ; Compara os valores de x e y
     mov di, word[y]
     movzx ax, byte[x] ;Colocar variavel x de 1 byte em registrado ax de 2 byte
