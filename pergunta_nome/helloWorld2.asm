@@ -13,9 +13,10 @@ section .text
     global _start
 
 _start:
+
+
 	; Escrever a mensagem no STDOUT
-	mov edx, msgLen
-	mov ecx, msg
+	lea text,esi
 	call printSimply
 
 

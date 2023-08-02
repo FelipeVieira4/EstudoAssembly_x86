@@ -16,6 +16,8 @@ segment .data ;Segment é uma parte da section
     ;Sistema Operacional
     CALL_SYSTEM equ 0x80 ;Chamado para o sistema operacional
 
+    text db 100
+
 ;Simples código para facilitar o print
 printSimply:
     mov eax, SYS_WRITE
